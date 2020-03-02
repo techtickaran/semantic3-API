@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
+    android:id="@+id/liear"
     android:padding="10dp">
 
     <androidx.appcompat.widget.AppCompatImageView
@@ -36,12 +36,14 @@
             android:layout_height="wrap_content"
             android:text="ItemDesc" />
     </LinearLayout>
+
     <View
         android:layout_width="1dp"
         android:layout_height="match_parent"
         android:layout_marginLeft="3dp"
         android:layout_marginRight="3dp"
         android:background="@android:color/black" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/ItemPrice"
         android:layout_width="wrap_content"

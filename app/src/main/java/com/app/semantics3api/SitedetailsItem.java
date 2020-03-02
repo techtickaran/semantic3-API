@@ -1,8 +1,9 @@
 package com.app.semantics3api;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class SitedetailsItem{
+public class SitedetailsItem implements Serializable {
 	private String name;
 	private String sku;
 	private int recentoffersCount;
