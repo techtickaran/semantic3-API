@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
                                   //a  resultsItem.setDescription(item.getString("description"));
 
+
                                     ArrayList<String> images = new ArrayList<>();
                                     JSONArray imageslist = item.optJSONArray("images");
                                     String image = imageslist.optString(0);

@@ -40,7 +40,7 @@ public class ItemSearchAsync extends AsyncTask<String, Object, JSONObject> {
             HttpURLConnection request = (HttpURLConnection) url.openConnection();
             request.setRequestProperty("User-Agent", "Semantics3 Java Library");
             request.setRequestMethod("GET");
-            OAuthConsumer consumer = new DefaultOAuthConsumer("SEM39C02671BF6BA036399786C7DB60A91C1", "MDdjMTkzZGNkMzM0YjdiZjRmMjk1Zjc3Zjg1NDJjZDI");
+            OAuthConsumer consumer = new DefaultOAuthConsumer("SEM351F3A38CE874C4339E6F27C27DCEC429", "ZTRjYzhlZTRiZWM0MWYxNmM0ZTMxYTFlZGIwOGNlZjM");
             consumer.sign(request);
             request.connect();
             BufferedReader streamReader = new BufferedReader(new InputStreamReader(request.getInputStream()));
