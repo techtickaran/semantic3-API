@@ -26,7 +26,7 @@ public class ItemSearchAsync extends AsyncTask<String, Object, JSONObject> {
     protected JSONObject doInBackground(String... params) {
         HttpResponse response = null;
         try {
-            String API_BASE = "https://api.semantics3.com/test/v1/";
+            String API_BASE = "https://api.semantics3.com/v1/";
             String endpoint = "products";
             String req = new StringBuffer()
                     .append(API_BASE)

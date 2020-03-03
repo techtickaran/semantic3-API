@@ -49,10 +49,15 @@ public class MainActivity extends AppCompatActivity  {
             public boolean onEditorAction(TextView textView, int id, KeyEvent keyEvent) {
                 if (id == EditorInfo.IME_ACTION_DONE) {
                     inputValue = textView.getText().toString();
+                    offset = 0;
+                    isLoading = false;
+                    item_count = 10;
+                    previousTotel= 0;
                     searchItemAsync(inputValue,offset, item_count, new ItemSearchListener() {
                         @Override
                         public void onSearchComplete(JSONObject object) {
                             try {
+                                resultsItems = new ArrayList<>();
                                 JSONArray results = object.getJSONArray("results");
                                 for (int i = 0; i < results.length(); i++) {
                                     JSONObject item = results.getJSONObject(i);
@@ -107,6 +112,9 @@ public class MainActivity extends AppCompatActivity  {
                 super.onScrolled(recyclerView, dx, dy);
                 totalItemCount = linearLayoutManager.getItemCount();
                 lastVisibleItem = linearLayoutManager.findFirstVisibleItemPosition();
+                Log.e("isLoading", isLoading + "");
+                Log.e("totalItemCount", totalItemCount + "");
+                Log.e("previousTotel", previousTotel + "");
                 if (dy > 0) {
                     if (isLoading) {
                         if (totalItemCount > previousTotel) {
@@ -175,7 +183,6 @@ public class MainActivity extends AppCompatActivity  {
     Adapter.sendData sendData = new Adapter.sendData() {
        @Override
        public void sendDetais(ArrayList<SitedetailsItem> resultsItem) {
-
            Bundle args = new Bundle();
            args.putSerializable("tar_name", resultsItem);
 
